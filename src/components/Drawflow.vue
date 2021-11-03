@@ -76,9 +76,8 @@ export default {
             })
 
             this.editor.on('nodeDataChanged', (id) => {
-                const from = this.editor.getNodeFromId(Number(id));
-                // const node = this.editor.getNodeFromId(Number(id));
-                // this.editor.removeConnectionNodeId(`node-${id}`)
+                const node = this.editor.getNodeFromId(Number(id));
+                this.editor.removeConnectionNodeId(`node-${id}`)
             })
         },
 
