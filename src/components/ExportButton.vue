@@ -8,7 +8,7 @@
         dark
         bottom
         right
-        @click="exportData"
+        @click="saveDialog = true"
     >
         <v-icon>mdi-content-save-all</v-icon>
     </v-btn>
@@ -20,18 +20,16 @@
 export default {
   name: 'ExportButton',
 
-  methods: {
-    async exportData() {
-      const data = this.$store.state.editor.export();
-      DrawflowAPI.post('/nodes', {
-        name:"Programa",
-        data: JSON.stringify(data) 
-      }).then((data) => {
-        console.log(data)
-      }).catch((e) => {
-        console.warn(e)
-      });
+  computed:{
+    saveDialog: {
+      get() {
+        return this.$store.state.saveDialog;
+      },
+
+      set(val){
+        this.$store.commit('SET_SAVE_DIALOG', val)
+      }
     }
-  },
+  }
 }
 </script>
