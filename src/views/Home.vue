@@ -1,15 +1,20 @@
 <template>
-  <hello-world />
+  <v-container>
+    <drawflow></drawflow>
+    <export-button></export-button>
+  </v-container>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import Drawflow from '../components/Drawflow'
+  import ExportButton from '../components/ExportButton'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
-    },
+      Drawflow,
+      ExportButton
+    }
   }
 </script>
