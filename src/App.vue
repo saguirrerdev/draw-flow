@@ -58,7 +58,7 @@
 <script>
 import NodesList from '../src/components/NodesList'
 import ProgramList from '../src/components/ProgramList'
-import { dfNode } from './components/drawflow-nodes/nodes';
+
 
 export default {
   name: 'App',
@@ -66,29 +66,6 @@ export default {
   components: {
     NodesList,
     ProgramList
-  },
-
-  data: () => 
-    ProgramList({
-    //
-  }),
-
-  computed: {
-    editor: {
-      get(){
-        return this.$store.state.editor
-      },
-      
-      set(val){
-        this.$store.commit('SET_EDITOR', val)
-      }
-    }
-  },
-
-  methods: {
-    add(node) {
-      this.editor.addNode(...dfNode(node))
-    }
   },
 };
 </script>

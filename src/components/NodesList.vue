@@ -51,7 +51,27 @@
 </template>
 
 <script>
+import { dfNode } from './drawflow-nodes/nodes';
+
 export default {
-    name: "NodesList"
+  name: "NodesList",
+
+  computed: {
+    editor: {
+      get(){
+        return this.$store.state.editor
+      },
+      
+      set(val){
+        this.$store.commit('SET_EDITOR', val)
+      }
+    }
+  },
+
+  methods: {
+    add(node) {
+      this.editor.addNode(...dfNode(node))
+    }
+  },
 }
 </script>
