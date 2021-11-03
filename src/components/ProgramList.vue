@@ -1,5 +1,5 @@
 <template>
-      <v-navigation-drawer
+  <v-navigation-drawer
       app
       clipped
       right
@@ -13,14 +13,14 @@
           <v-list-item-content>
             <v-list-item-title>
               {{ program.name }}
-              <v-icon color="blue" class="mr-1">mdi-apache-kafka</v-icon>
+              <v-icon @click="loadProgram(program)" color="blue" class="mr-1">mdi-apache-kafka</v-icon>
               <v-icon color="yellow" class="mr-1">mdi-language-python</v-icon>
               <v-icon color="red" class="mr-1">mdi-delete</v-icon>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
-    </v-navigation-drawer>
+  </v-navigation-drawer>
 </template>
 
 <script>
@@ -32,6 +32,16 @@ export default {
     },
 
     computed:{
+      editor:{
+        get(){
+          return this.$store.state.editor
+        },
+
+        set(val){
+          this.$store.commit('SET_EDITOR', val)
+        }
+      },
+
       programs:{
         get() {
           return this.$store.state.programs
@@ -48,11 +58,17 @@ export default {
       },
       getPrograms(){
         DrawflowAPI.get('/nodes').then(({data}) => {
-            console.log(data);
             this.programs = data
           }).catch((e) => {
             console.warn(e)
           })
+      },
+      loadProgram(program){
+        const c = confirm(`Todo el trabajo que no este guardado se perderá. ¿Cargar ${program.name} igualmente?`)
+        if(c){
+          this.editor.clear()
+          this.editor.import(JSON.parse(program.data))
+        }
       }
     }
 }
