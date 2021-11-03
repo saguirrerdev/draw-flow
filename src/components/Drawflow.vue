@@ -1,5 +1,7 @@
 <template>
-  <div id="drawflow"></div>
+  <v-card elevation="9">
+    <div id="drawflow"></div>
+  </v-card>
 </template>
 
 <script>
@@ -111,6 +113,5 @@ export default {
   #drawflow{
     height: 80vh;
     max-width: 100%;
-    border: 1px solid black;
   }
 </style>
