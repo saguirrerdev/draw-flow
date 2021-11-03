@@ -2,6 +2,7 @@
   <v-app>
     <v-app-bar
       app
+      clipped-left
       color="primary"
       dark
     >
@@ -37,13 +38,62 @@
       </v-btn>
     </v-app-bar>
 
+    <v-navigation-drawer      
+      app
+      clipped
+      expand-on-hover
+    >
+      <v-list>
+        <v-list-item @click="add('Text')">
+          <v-list-item-content>
+            <v-list-item-title>
+              Text
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              Escribe textos
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item @click="add('Number')">
+          <v-list-item-content>
+            <v-list-item-title>
+              Número
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              Escribe números
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+        
+        <v-list-item @click="add('Add')">
+          <v-list-item-content>
+            <v-list-item-title>
+              Súma
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              Suma 2 números
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-main>
       <router-view/>
     </v-main>
+
+    <v-footer
+      app
+      class="d-flex justify-center"
+    >
+      Drawflow 2021
+    </v-footer>
   </v-app>
 </template>
 
 <script>
+import { dfNode } from './components/drawflow-nodes/nodes';
 
 export default {
   name: 'App',
@@ -51,5 +101,23 @@ export default {
   data: () => ({
     //
   }),
+
+  computed: {
+    editor: {
+      get(){
+        return this.$store.state.editor
+      },
+      
+      set(val){
+        this.$store.commit('SET_EDITOR', val)
+      }
+    }
+  },
+
+  methods: {
+    add(node) {
+      this.editor.addNode(...dfNode(node))
+    }
+  },
 };
 </script>
