@@ -5,6 +5,8 @@
       right
       expand-on-hover
     >
+      <v-skeleton-loader :loading="loading" type="list-item-avatar@5">
+
       <v-list>
         <v-list-item v-for="(program, idx) in programs" :key="idx">
           <v-list-item-icon>
@@ -20,12 +22,17 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      </v-skeleton-loader>
   </v-navigation-drawer>
 </template>
 
 <script>
 export default {
     name: "ProgramList",
+
+    data: () => ({
+      loading: true
+    }),
 
     mounted() {
       this.initialize()
@@ -57,8 +64,10 @@ export default {
         this.getPrograms()
       },
       getPrograms(){
+        this.loading = true;
         DrawflowAPI.get('/nodes').then(({data}) => {
             this.programs = data
+            this.loading = false
           }).catch((e) => {
             console.warn(e)
           })
