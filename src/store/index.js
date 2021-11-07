@@ -25,6 +25,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async getPrograms({ commit }){
+      return DrawflowAPI.get('/nodes').then(({data}) => {
+        commit('SET_PROGRAMS', data)
+        return true
+      }).catch((e) => {
+        console.warn(e)
+      })
+    }
   },
   modules: {
   }

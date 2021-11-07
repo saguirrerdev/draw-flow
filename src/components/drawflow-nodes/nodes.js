@@ -71,8 +71,8 @@ export const dfNode = function(node) {
         0, //Outputs
         20, // Posx
         100, //Posy
-        'for', //class,
-        { from: 0, till: 1 },//data
+        'print', //class,
+        { value: 'Hola mundo' },//data
         PrintComponent.name,//vue component name
         'vue'
     ]
@@ -84,7 +84,7 @@ export const dfNode = function(node) {
         20, // Posx
         100, //Posy
         'conditional', //class,
-        {},//data
+        { condition: '1 == 1' },//data
         ConditionalComponent.name,//vue component name
         'vue'
     ]
@@ -96,7 +96,7 @@ export const dfNode = function(node) {
         20, // Posx
         100, //Posy
         'code', //class,
-        { value: 'const number = 10' },//data
+        {},//data
         CodeComponent.name,//vue component name
         'vue'
     ]

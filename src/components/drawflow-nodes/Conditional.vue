@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-container>
-      <p>If</p>
+      <p>If <input type="text" df-condition /></p>
       <p>Else</p>
     </v-container>
   </v-card>

@@ -70,14 +70,11 @@ export default {
       initialize(){
         this.getPrograms()
       },
-      getPrograms(){
+      async getPrograms(){
         this.loading = true;
-        DrawflowAPI.get('/nodes').then(({data}) => {
-            this.programs = data
-            this.loading = false
-          }).catch((e) => {
-            console.warn(e)
-          })
+        await this.$store.dispatch('getPrograms')
+        this.loading = false;
+
       },
       loadProgram(program){
         const c = confirm(`Todo el trabajo que no este guardado se perderá. ¿Cargar ${program.name} igualmente?`)

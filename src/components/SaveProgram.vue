@@ -78,8 +78,8 @@ export default {
       nodes = Object.keys(data.drawflow.Home.data).map((key) => {
         return data.drawflow.Home.data[key]
       })
-      console.log(nodes)
-      return
+      // console.log(nodes)
+      // return
       DrawflowAPI.post('/nodes', {
         name: this.name,
         data: JSON.stringify(data),
@@ -87,6 +87,7 @@ export default {
       }).then(({data}) => {
         this.saveDialog = false
         this.name = ''
+        this.$store.dispatch('getPrograms')
         console.log(data)
       }).catch((e) => {
         console.warn(e)

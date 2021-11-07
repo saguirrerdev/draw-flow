@@ -1,5 +1,9 @@
 <template>
-  <h1>Imprimir</h1>
+  <div>
+    <h1>Imprimir</h1>
+    <input type="text" df-value>
+  </div>
+
 </template>
 
 <script>
