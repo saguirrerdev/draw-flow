@@ -72,11 +72,18 @@ export default {
 
   methods: {
     async exportData() {
-      const data = this.$store.state.editor.export();
+      let data = this.$store.state.editor.export();
+
+      let nodes = []
+      nodes = Object.keys(data.drawflow.Home.data).map((key) => {
+        return data.drawflow.Home.data[key]
+      })
+      
       DrawflowAPI.post('/nodes', {
         name: this.name,
-        data: JSON.stringify(data) 
-      }).then((data) => {
+        data: JSON.stringify(data),
+        nodes: JSON.stringify(nodes)
+      }).then(({data}) => {
         this.saveDialog = false
         this.name = ''
         console.log(data)
