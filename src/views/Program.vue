@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1>Programa <em>{{ program.name }}</em></h1>
-    <code-viewer :code="program.code"></code-viewer>
+    <code-viewer v-if="!loading" :code="program.code"></code-viewer>
   </v-container>
 </template>
 
@@ -15,6 +15,7 @@ export default {
 
   data: () => ({
     program:{},
+    loading: true
   }),
 
   mounted() {
@@ -26,8 +27,10 @@ export default {
       this.getProgram()
     },
     getProgram(){
+      this.loading = true
       DrawflowAPI.get(`/nodes/${this.$route.params.id}/code`).then(({data}) => {
         this.program = data
+        this.loading = false
       }).catch((e) => {
         console.warn(e)
       })
