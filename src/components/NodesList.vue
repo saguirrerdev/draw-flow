@@ -5,70 +5,32 @@
       expand-on-hover
     >
       <v-list>
-        <v-list-item @click="add('Text')">
+        <v-list-item v-for="component in components" :key="component.node_key" @click="add(component.node_key)">
           <v-list-item-icon>
-            <v-icon>mdi-form-textbox</v-icon>
+            <v-icon>{{ component.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              Text
+              {{component.node_name}}
             </v-list-item-title>
             <v-list-item-subtitle>
-              Escribe textos
+              {{component.description}}
             </v-list-item-subtitle>
           </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item @click="add('Number')">
-          <v-list-item-icon>
-            <v-icon>mdi-numeric</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>
-              Número
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              Escribe números
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-        
-        <v-list-item @click="add('Add')">
-          <v-list-item-icon>
-            <v-icon>mdi-plus</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>
-              Súma
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              Suma 2 números
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-
-        <v-list-item @click="add('For')">
-          <v-list-item-icon>
-            <v-icon>mdi-reload</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>
-              Ciclo
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              Ciclo for básico
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
+        </v-list-item>   
       </v-list>
     </v-navigation-drawer>
 </template>
 
 <script>
-import { dfNode } from './drawflow-nodes/nodes';
+import { dfNode, components } from './drawflow-nodes/nodes';
 
 export default {
   name: "NodesList",
+
+  data: () => ({
+    components
+  }),
 
   computed: {
     editor: {

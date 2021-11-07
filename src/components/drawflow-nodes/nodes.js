@@ -2,12 +2,14 @@ import TextComponent from './Text.vue'
 import NumberComponent from './Number.vue'
 import AddComponent from './Add.vue'
 import ForComponent from './For.vue'
+import PrintComponent from './Print.vue'
 
 export const components = [
     TextComponent,
     NumberComponent,
     AddComponent,
-    ForComponent
+    ForComponent,
+    PrintComponent
 ]
 
 export const dfNode = function(node) {
@@ -50,7 +52,7 @@ export const dfNode = function(node) {
     const For = [
         'Home', //module
         2, //Inputs
-        0, //Outputs
+        1, //Outputs
         20, // Posx
         100, //Posy
         'for', //class,
@@ -59,11 +61,24 @@ export const dfNode = function(node) {
         'vue'
     ]
     
+    const Print = [
+        'Home', //module
+        1, //Inputs
+        0, //Outputs
+        20, // Posx
+        100, //Posy
+        'for', //class,
+        { from: 0, till: 1 },//data
+        PrintComponent.name,//vue component name
+        'vue'
+    ]
+    
     const nodes = {
         Text,
         Number,
         Add,
         For,
+        Print
     }
 
     return nodes[node] || null

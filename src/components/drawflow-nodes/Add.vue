@@ -7,6 +7,10 @@
 
 <script>
 export default {
-  name: 'Df_add'
+  name: 'Df_add',
+  icon: 'mdi-plus',
+  description: 'Suma 2 números',
+  node_name: 'Suma',
+  node_key:'Add'
 }
 </script>

@@ -4,6 +4,10 @@
 
 <script>
 export default {
-  name: 'Df_text'
+  name: 'Df_text',
+  icon: 'mdi-form-textbox',
+  description: 'Escribe textos',
+  node_name: 'Texto',
+  node_key:'Text'
 }
 </script>

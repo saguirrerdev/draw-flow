@@ -16,6 +16,10 @@
 
 <script>
 export default {
-  name: 'Df_for'
+  name: 'Df_for',
+  icon: 'mdi-reload',
+  description: 'Ciclo for básico',
+  node_name: 'Ciclo',
+  node_key:'For'
 }
 </script>
