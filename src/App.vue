@@ -12,30 +12,23 @@
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          :src="nodo"
           transition="scale-transition"
           width="40"
         />
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <h1 @click="home">Drawflow</h1>
       </div>
 
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://github.com/zebek95/draw-flow"
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        <span class="mr-2">Repositorio</span>
+        <v-icon>mdi-github</v-icon>
       </v-btn>
     </v-app-bar>
 
@@ -56,6 +49,7 @@
 </template>
 
 <script>
+import nodo from './assets/nodos.png'
 import NodesList from '../src/components/NodesList'
 import ProgramList from '../src/components/ProgramList'
 
@@ -63,9 +57,19 @@ import ProgramList from '../src/components/ProgramList'
 export default {
   name: 'App',
 
+  data: () => ({
+    nodo,
+  }),
+
   components: {
     NodesList,
     ProgramList
   },
+
+  methods: {
+    home(){
+      this.$router.push({ name: 'Home' })
+    }
+  }
 };
 </script>
