@@ -3,13 +3,17 @@ import NumberComponent from './Number.vue'
 import AddComponent from './Add.vue'
 import ForComponent from './For.vue'
 import PrintComponent from './Print.vue'
+import ConditionalComponent from './Conditional.vue'
+import CodeComponent from './Code.vue'
 
 export const components = [
     TextComponent,
     NumberComponent,
     AddComponent,
     ForComponent,
-    PrintComponent
+    PrintComponent,
+    ConditionalComponent,
+    CodeComponent
 ]
 
 export const dfNode = function(node) {
@@ -72,13 +76,39 @@ export const dfNode = function(node) {
         PrintComponent.name,//vue component name
         'vue'
     ]
+
+    const Conditional = [
+        'Home', //module
+        0, //Inputs
+        2, //Outputs
+        20, // Posx
+        100, //Posy
+        'conditional', //class,
+        {},//data
+        ConditionalComponent.name,//vue component name
+        'vue'
+    ]
+
+    const Code = [
+        'Home', //module
+        0, //Inputs
+        0, //Outputs
+        20, // Posx
+        100, //Posy
+        'code', //class,
+        { value: 'const number = 10' },//data
+        CodeComponent.name,//vue component name
+        'vue'
+    ]
     
     const nodes = {
         Text,
         Number,
         Add,
         For,
-        Print
+        Print,
+        Conditional,
+        Code
     }
 
     return nodes[node] || null
