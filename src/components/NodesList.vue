@@ -4,6 +4,14 @@
       clipped
       expand-on-hover
     >
+      <v-list-item class="px-2">
+        <v-list-item-icon>
+          <v-icon>mdi-arrange-bring-to-front</v-icon>
+        </v-list-item-icon>
+
+        <v-list-item-title>Lista de componentes</v-list-item-title>
+      </v-list-item>
+      <v-divider></v-divider>
       <v-list>
         <v-list-item v-for="component in components" :key="component.node_key" @click="add(component.node_key)">
           <v-list-item-icon>

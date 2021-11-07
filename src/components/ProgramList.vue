@@ -5,8 +5,15 @@
       right
       expand-on-hover
     >
-      <v-skeleton-loader :loading="loading" type="list-item-avatar@5">
+      <v-list-item class="px-2">
+        <v-list-item-icon>
+          <v-icon>mdi-application-import</v-icon>
+        </v-list-item-icon>
 
+        <v-list-item-title>Lista de programas</v-list-item-title>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-skeleton-loader :loading="loading" type="list-item-avatar@5">
       <v-list>
         <v-list-item v-for="(program, idx) in programs" :key="idx">
           <v-list-item-icon>
