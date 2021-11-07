@@ -101,7 +101,7 @@ export default {
 
             const rs = input1 + input2
 
-            this.editor.updateNodeDataFromId(data.id, { value: rs })
+            this.editor.updateNodeDataFromId(data.id, { value: rs+'' })
         },
 
         for(e){
@@ -111,7 +111,7 @@ export default {
             const till = inputs.input_2.connections.length > 0 ? this.editor.getNodeFromId(inputs.input_2.connections[0].node).data.value : parseInt(from, 10)+1
             
 
-            this.editor.updateNodeDataFromId(id, { from, till })
+            this.editor.updateNodeDataFromId(id, { from: from+'', till: till+'' })
 
         },
 

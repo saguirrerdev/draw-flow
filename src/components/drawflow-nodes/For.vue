@@ -3,12 +3,12 @@
     <v-container>
       <label>
         Desde
-        <input type="number" df-from placeholder="Desde" readonly>
+        <input type="number" df-from placeholder="Desde">
       </label>
 
       <label>
         Hasta
-        <input type="number" df-till placeholder="Hasta" readonly>
+        <input type="number" df-till placeholder="Hasta">
       </label>
     </v-container>
   </v-card>
