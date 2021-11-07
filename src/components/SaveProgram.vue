@@ -78,7 +78,8 @@ export default {
       nodes = Object.keys(data.drawflow.Home.data).map((key) => {
         return data.drawflow.Home.data[key]
       })
-      
+      console.log(nodes)
+      return
       DrawflowAPI.post('/nodes', {
         name: this.name,
         data: JSON.stringify(data),

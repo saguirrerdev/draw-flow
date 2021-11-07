@@ -46,6 +46,20 @@
             </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
+
+        <v-list-item @click="add('For')">
+          <v-list-item-icon>
+            <v-icon>mdi-reload</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>
+              Ciclo
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              Ciclo for básico
+            </v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 </template>

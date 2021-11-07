@@ -60,8 +60,10 @@ export default {
             this.editor.on('connectionCreated', (e) => {
                 const to = this.editor.getNodeFromId(e.input_id)
                 switch(to.html) {
-                   case 'Df_add': this.add(e)
+                    case 'Df_add': this.add(e)
                        break;
+                    case 'Df_for':this.for(e)
+                        break;
                     default: return
                 }
             })
@@ -69,8 +71,10 @@ export default {
             this.editor.on('connectionRemoved', (e) => {
                 const to = this.editor.getNodeFromId(e.input_id)
                 switch(to.html) {
-                   case 'Df_add': this.add(e)
+                    case 'Df_add': this.add(e)
                        break;
+                    case 'Df_for': this.for(e)
+                        break;
                     default: return
                 }
             })
@@ -98,6 +102,17 @@ export default {
             const rs = input1 + input2
 
             this.editor.updateNodeDataFromId(data.id, { value: rs })
+        },
+
+        for(e){
+            const { id, inputs } = this.editor.getNodeFromId(e.input_id)
+
+            const from = inputs.input_1.connections.length > 0 ? this.editor.getNodeFromId(inputs.input_1.connections[0].node).data.value : 0
+            const till = inputs.input_2.connections.length > 0 ? this.editor.getNodeFromId(inputs.input_2.connections[0].node).data.value : parseInt(from, 10)+1
+            
+
+            this.editor.updateNodeDataFromId(id, { from, till })
+
         },
 
         getNodeValue(node){
