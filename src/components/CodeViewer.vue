@@ -1,6 +1,6 @@
 <template>
   <v-card>
-      <codemirror :code="code" :options="cmOptions"></codemirror>
+    <codemirror :value="value" :options="cmOptions" @input="$emit('input', $event)"></codemirror>
   </v-card>
 </template>
 
@@ -12,16 +12,16 @@ export default {
     name: 'CodeViwer',
 
     props:{
-      code: {
+      value: {
         type: String,
-        required: true
+        required: false
       }
     },
 
     data: () => ({
       cmOptions: {
         tabSize: 4,
-        mode: 'text/javascript',
+        mode: 'text/x-python',
         theme: 'base16-dark',
         lineNumbers: true,
         line: true,
