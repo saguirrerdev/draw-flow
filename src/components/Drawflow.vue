@@ -59,13 +59,13 @@ export default {
         events(){
             this.editor.on('connectionCreated', (e) => {
                 const to = this.editor.getNodeFromId(e.input_id)
-                switch(to.html) {
-                    case 'Df_add': this.add(e)
-                       break;
-                    case 'Df_for':this.for(e)
-                        break;
-                    default: return
-                }
+                // switch(to.html) {
+                //     case 'Df_add': this.add(e)
+                //        break;
+                //     case 'Df_for':this.for(e)
+                //         break;
+                //     default: return
+                // }
             })
 
             this.editor.on('connectionRemoved', (e) => {
