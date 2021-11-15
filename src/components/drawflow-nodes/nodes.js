@@ -112,7 +112,7 @@ export const dfNode = function(node) {
         20,
         100,
         'conditional',
-        { condition: '1 == 1' },
+        { condition: "1 == 1" },
         ConditionalComponent.name,
         'vue'
     ]
@@ -124,7 +124,7 @@ export const dfNode = function(node) {
         20,
         100,
         'code',
-        {},
+        { value: "" },
         CodeComponent.name,
         'vue'
     ]
