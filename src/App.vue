@@ -35,8 +35,9 @@
       </v-btn>
     </v-app-bar>
 
-    <nodes-list></nodes-list>
-    <program-list></program-list>
+    <nodes-list v-if="currentRouteName == 'Home'"></nodes-list>
+
+    <program-list v-if="currentRouteName == 'Home'"></program-list>
 
     <v-main>
       <router-view/>
@@ -69,6 +70,12 @@ export default {
   components: {
     NodesList,
     ProgramList
+  },
+
+  computed: {
+    currentRouteName() {
+        return this.$route.name;
+    }
   },
 
   methods: {
