@@ -26,7 +26,7 @@
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/zebek95/draw-flow"
+        href="https://github.com/zebek95/drawflow-api"
         target="_blank"
         text
       >
@@ -49,7 +49,10 @@
       class="d-flex justify-center"
       color="rgb(25, 8, 98)"
     >
-      Drawflow 2021
+    <v-btn text href="https://github.com/zebek95" target="_blank">Sergio Aguirre Romero</v-btn>
+    <v-btn text href="https://github.com/jerosoler/Drawflow" target="_blank">Drawflow</v-btn>
+    <v-btn text href="https://golang.org/" target="_blank">Go</v-btn>
+    <v-btn text href="https://vuejs.org/" target="_blank">Vue.js</v-btn>
     </v-footer>
   </v-app>
 </template>
@@ -87,3 +90,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .v-application a {
+    color: white ;
+  }
+</style>
