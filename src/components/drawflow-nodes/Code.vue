@@ -12,6 +12,7 @@ export default {
   description: 'Escribe codigo (Python)',
   node_name: 'Código',
   node_key:'Code',
+  validConnections : ['Df_for', 'Df_conditional'],
 
   components: {
     codemirror

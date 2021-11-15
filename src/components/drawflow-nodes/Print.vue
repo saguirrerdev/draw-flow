@@ -12,7 +12,8 @@ export default {
   icon: 'mdi-printer-eye',
   description: 'Imprime un mensaje',
   node_name: 'Imprimir',
-  node_key:'Print'
+  node_key:'Print',
+  validConnections : ['Df_for', 'Df_conditional'],
 }
 </script>
 

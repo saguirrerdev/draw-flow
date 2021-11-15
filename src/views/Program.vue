@@ -58,7 +58,6 @@ export default {
       Sk.pre = "output";
       Sk.configure({output:outf, read:builtinRead}); 
       try {
-          console.log(this.program.code)
           eval(Sk.importMainWithBody("<stdin>", false, this.code)); 
       }
       catch(e) {
