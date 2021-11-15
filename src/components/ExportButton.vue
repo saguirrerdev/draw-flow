@@ -1,7 +1,7 @@
 <template>
   <v-fab-transition>
     <v-btn
-        :color="'red'"
+        color="rgb(255, 188, 0)"
         absolute
         fab
         large

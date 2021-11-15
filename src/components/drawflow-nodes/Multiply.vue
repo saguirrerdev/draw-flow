@@ -1,8 +1,5 @@
 <template>
-  <v-card>
-    <v-card-title>Multiplicar</v-card-title>
-    <!-- <input type="number" df-value style="color:black"> -->
-  </v-card>
+  <h3>Multiplicación</h3>
 </template>
 
 <script>
@@ -14,3 +11,11 @@ export default {
   node_key:'Multiply'
 }
 </script>
+
+<style>
+  .Multiply h3 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>

@@ -1,8 +1,5 @@
 <template>
-  <v-card>
-    <v-card-title>Resta</v-card-title>
-    <!-- <input type="number" df-value style="color:black"> -->
-  </v-card>
+  <h3>Resta</h3>
 </template>
 
 <script>
@@ -14,3 +11,11 @@ export default {
   node_key:'Substraction'
 }
 </script>
+
+<style>
+  .Substraction h3 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>

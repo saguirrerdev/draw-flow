@@ -5,6 +5,7 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 
 import './plugins/api'
+import './assets/drawflow.css'
 
 Vue.config.productionTip = false
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Imprimir</h1>
+    <h3>Imprimir</h3>
     <input type="text" df-value>
   </div>
 
@@ -15,3 +15,21 @@ export default {
   node_key:'Print'
 }
 </script>
+
+<style>
+  .Print h3 {
+    color: white !important;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .Print input {
+    text-align: center;
+    font-style: italic;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid black;
+  }
+
+
+</style>

@@ -1,10 +1,10 @@
 <template>
-  <v-app>
+  <v-app style="background-color:rgb(109, 51, 254)">
     <v-app-bar
       app
       clipped-left
       clipped-right
-      color="primary"
+      color="rgb(25, 8, 98)"
       dark
     >
       <div class="d-flex align-center">
@@ -41,7 +41,9 @@
 
     <v-footer
       app
+      dark
       class="d-flex justify-center"
+      color="rgb(25, 8, 98)"
     >
       Drawflow 2021
     </v-footer>

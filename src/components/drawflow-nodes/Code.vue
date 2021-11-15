@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <codemirror v-model="code" :options="cmOptions"></codemirror>
-  </div>
-
+  <codemirror v-model="code" :options="cmOptions"></codemirror>
 </template>
 
 <script>
@@ -58,3 +55,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  .Code {
+    width: 400px !important;
+  }  
+</style>

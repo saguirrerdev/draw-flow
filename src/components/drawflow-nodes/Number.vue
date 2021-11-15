@@ -11,3 +11,13 @@ export default {
   node_key:'Number'
 }
 </script>
+
+<style>
+  .number input{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    border: 0;
+    outline: none;
+  } 
+</style>

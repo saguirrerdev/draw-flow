@@ -3,6 +3,8 @@
       app
       clipped
       expand-on-hover
+      dark
+      color="rgb(109, 51, 254)"
     >
       <v-list-item class="px-2">
         <v-list-item-icon>

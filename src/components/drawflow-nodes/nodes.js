@@ -39,7 +39,7 @@ export const dfNode = function(node) {
         1,
         20,
         100,
-        'add',
+        AddComponent.node_key,
         { value: "0"},
         AddComponent.name,
         'vue'
@@ -87,7 +87,7 @@ export const dfNode = function(node) {
         1,
         20,
         100,
-        'for',
+        ForComponent.node_key,
         { from: "0", till: "1" },
         ForComponent.name,
         'vue'
@@ -99,7 +99,7 @@ export const dfNode = function(node) {
         0,
         20,
         100,
-        'print',
+        PrintComponent.node_key,
         { value: 'Hola mundo' },
         PrintComponent.name,
         'vue'
@@ -111,7 +111,7 @@ export const dfNode = function(node) {
         2,
         20,
         100,
-        'conditional',
+        ConditionalComponent.node_key,
         { condition: "1 == 1" },
         ConditionalComponent.name,
         'vue'
@@ -123,7 +123,7 @@ export const dfNode = function(node) {
         0,
         20,
         100,
-        'code',
+        CodeComponent.node_key,
         { value: "" },
         CodeComponent.name,
         'vue'

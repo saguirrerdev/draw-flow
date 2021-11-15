@@ -1,8 +1,5 @@
 <template>
-  <v-card>
-    <v-card-title>Suma</v-card-title>
-    <!-- <input type="number" df-value style="color:black"> -->
-  </v-card>
+  <h3>Suma</h3>
 </template>
 
 <script>
@@ -14,3 +11,11 @@ export default {
   node_key:'Add'
 }
 </script>
+
+<style>
+  .Add h3 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
