@@ -17,7 +17,10 @@
           width="40"
         />
 
-        <h1 @click="home">Drawflow</h1>
+        <h1 >Drawflow</h1>
+        <v-btn icon @click="home">
+          <v-icon >mdi-vector-polyline-edit</v-icon>
+        </v-btn>
       </div>
 
       <v-spacer></v-spacer>
@@ -70,7 +73,9 @@ export default {
 
   methods: {
     home(){
-      this.$router.push({ name: 'Home' })
+      if(this.$route.name !== 'Home'){
+        this.$router.push({ name: 'Home' })
+      }
     }
   }
 };
