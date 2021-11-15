@@ -18,7 +18,7 @@
       <v-divider></v-divider>
 
       <v-skeleton-loader :loading="loading" type="list-item-avatar@5">
-      <v-list>
+      <v-list v-if="programs.length > 0">
         <v-list-item v-for="(program, idx) in programs" :key="idx">
           <v-list-item-icon>
             <v-icon>mdi-application-braces</v-icon>
@@ -79,6 +79,16 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+
+      <v-list v-else>
+        <v-list-item>
+          <v-list-item-icon>
+            <v-icon>mdi-cloud-search</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title>No hay registros</v-list-item-title>
+        </v-list-item>
+      </v-list>
+      
       </v-skeleton-loader>
   </v-navigation-drawer>
 </template>
