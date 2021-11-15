@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style>
-  .number input{
+  .Number input{
     text-align: center;
     font-weight: bold;
     color: white;

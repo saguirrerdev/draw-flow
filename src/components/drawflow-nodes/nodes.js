@@ -27,7 +27,7 @@ export const dfNode = function(node) {
         1,
         20,
         100,
-        'number',
+        NumberComponent.node_key,
         { value: "0" },
         NumberComponent.name,
         'vue'
