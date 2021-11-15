@@ -12,7 +12,9 @@
 
         <v-list-item-title>Lista de programas</v-list-item-title>
       </v-list-item>
+
       <v-divider></v-divider>
+
       <v-skeleton-loader :loading="loading" type="list-item-avatar@5">
       <v-list>
         <v-list-item v-for="(program, idx) in programs" :key="idx">
@@ -22,10 +24,56 @@
           <v-list-item-content>
             <v-list-item-title>
               {{ program.name }}
-              <v-icon @click="loadProgram(program)" color="blue" class="mr-1">mdi-apache-kafka</v-icon>
-              <v-icon @click="viewProgram(program)" color="yellow" class="mr-1">mdi-language-python</v-icon>
-              <v-icon @click="deleteProgram(program)" color="red" class="mr-1">mdi-delete</v-icon>
             </v-list-item-title>
+            <v-list-item-subtitle>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    @click="loadProgram(program)"
+                    icon
+                    color="blue"
+                    dark
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon>mdi-apache-kafka</v-icon>
+                  </v-btn>
+                </template>
+                <span>Cargar esquema</span>
+              </v-tooltip>
+
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    @click="viewProgram(program)"
+                    icon
+                    color="yellow"
+                    dark
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon>mdi-language-python</v-icon>
+                  </v-btn>
+                </template>
+                <span>Generar código python</span>
+              </v-tooltip>
+
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn
+                    @click="deleteProgram(program)"
+                    icon
+                    color="red"
+                    dark
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    <v-icon>mdi-delete</v-icon>
+                  </v-btn>
+                </template>
+                <span>Eliminar</span>
+              </v-tooltip>
+            </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -38,7 +86,8 @@ export default {
     name: "ProgramList",
 
     data: () => ({
-      loading: true
+      loading: true,
+      fab: false
     }),
 
     mounted() {
@@ -87,7 +136,10 @@ export default {
         this.$router.push({name: 'Program', params: { id: program.uid}})
       },
       async deleteProgram(program){
-        await this.$store.dispatch('deleteProgram', program)
+        const c = confirm(`¿Esta seguro de eliminar el programa ${program.name} ?`)
+        if(c){
+          await this.$store.dispatch('deleteProgram', program)
+        }
       }
     }
 }
