@@ -25,15 +25,32 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async saveProgram({ dispatch }, payload){
+      return await DrawflowAPI.post('/nodes', payload).then(({data}) => {
+        dispatch('getPrograms')
+        return true
+      }).catch(e => {
+        console.warn(e)
+        return false
+      })
+    },
     async getPrograms({ commit }){
       return DrawflowAPI.get('/nodes').then(({data}) => {
-        commit('SET_PROGRAMS', data)
+        commit(SET_PROGRAMS, data)
         return true
       }).catch((e) => {
         console.warn(e)
+        return false
+      })
+    },
+    async deleteProgram({ dispatch }, { uid }){
+      return DrawflowAPI.delete(`/nodes/${uid}`).then(({data}) => {
+        dispatch('getPrograms')
+        return true
+      }).catch((e) => {
+        console.warn(e)
+        return false
       })
     }
-  },
-  modules: {
   }
 })

@@ -23,8 +23,8 @@
             <v-list-item-title>
               {{ program.name }}
               <v-icon @click="loadProgram(program)" color="blue" class="mr-1">mdi-apache-kafka</v-icon>
-              <v-icon color="yellow" class="mr-1" @click="viewProgram(program)">mdi-language-python</v-icon>
-              <v-icon color="red" class="mr-1">mdi-delete</v-icon>
+              <v-icon @click="viewProgram(program)" color="yellow" class="mr-1">mdi-language-python</v-icon>
+              <v-icon @click="deleteProgram(program)" color="red" class="mr-1">mdi-delete</v-icon>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -85,6 +85,9 @@ export default {
       },
       viewProgram(program){
         this.$router.push({name: 'Program', params: { id: program.uid}})
+      },
+      async deleteProgram(program){
+        await this.$store.dispatch('deleteProgram', program)
       }
     }
 }
