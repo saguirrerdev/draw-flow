@@ -1,4 +1,3 @@
-import TextComponent from './Text.vue'
 import NumberComponent from './Number.vue'
 import AddComponent from './Add.vue'
 import MultiplyComponent from './Multiply.vue'
@@ -10,141 +9,127 @@ import ConditionalComponent from './Conditional.vue'
 import CodeComponent from './Code.vue'
 
 export const components = [
-    // TextComponent,
     NumberComponent,
     AddComponent,
     SubstractionComponent,
-    MultiplyComponent,
     DivideComponent,
+    MultiplyComponent,
     ForComponent,
     PrintComponent,
     ConditionalComponent,
     CodeComponent
 ]
 
-export const dfNode = function(node) {
-    const Text = [
-        'Home', //module
-        0, //Inputs
-        1, //Outputs
-        20, // Posx
-        100, //Posy
-        'text', //class,
-        { value: "" },//data
-        TextComponent.name,//vue component name
-        'vue'
-    ]
-    
+export const dfNode = function(node) {    
     const Number = [
-        'Home', //module
-        0, //Inputs
-        1, //Outputs
-        20, // Posx
-        100, //Posy
-        'number', //class,
-        { value: "0" },//data
-        NumberComponent.name,//vue component name
+        'Home',
+        0,
+        1,
+        20,
+        100,
+        'number',
+        { value: "0" },
+        NumberComponent.name,
         'vue'
     ]
 
     const Add = [
-        'Home', //module
-        2, //Inputs
-        1, //Outputs
-        20, // Posx
-        100, //Posy
-        'add', //class,
-        { value: "0"},//data
-        AddComponent.name,//vue component name
+        'Home',
+        2,
+        1,
+        20,
+        100,
+        'add',
+        { value: "0"},
+        AddComponent.name,
         'vue'
     ]
     
     const Substraction = [
-        'Home', //module
-        2, //Inputs
-        1, //Outputs
-        20, // Posx
-        100, //Posy
-        SubstractionComponent.node_key, //class,
-        { value: "0"},//data
-        SubstractionComponent.name,//vue component name
+        'Home',
+        2,
+        1,
+        20,
+        100,
+        SubstractionComponent.node_key,
+        { value: "0"},
+        SubstractionComponent.name,
         'vue'
     ]
 
     const Divide = [
-        'Home', //module
-        2, //Inputs
-        1, //Outputs
-        20, // Posx
-        100, //Posy
-        DivideComponent.node_key, //class,
-        { value: "0"},//data
-        DivideComponent.name,//vue component name
+        'Home',
+        2,
+        1,
+        20,
+        100,
+        DivideComponent.node_key,
+        { value: "0"},
+        DivideComponent.name,
         'vue'
     ]
 
     const Multiply = [
-        'Home', //module
-        2, //Inputs
-        1, //Outputs
-        20, // Posx
-        100, //Posy
-        MultiplyComponent.node_key, //class,
-        { value: "0"},//data
-        MultiplyComponent.name,//vue component name
+        'Home',
+        2,
+        1,
+        20,
+        100,
+        MultiplyComponent.node_key,
+        { value: "0"},
+        MultiplyComponent.name,
         'vue'
     ]
     
     const For = [
-        'Home', //module
-        0, //Inputs
-        1, //Outputs
-        20, // Posx
-        100, //Posy
-        'for', //class,
-        { from: "0", till: "1" },//data
-        ForComponent.name,//vue component name
+        'Home',
+        0,
+        1,
+        20,
+        100,
+        'for',
+        { from: "0", till: "1" },
+        ForComponent.name,
         'vue'
     ]
     
     const Print = [
-        'Home', //module
-        1, //Inputs
-        0, //Outputs
-        20, // Posx
-        100, //Posy
-        'print', //class,
-        { value: 'Hola mundo' },//data
-        PrintComponent.name,//vue component name
+        'Home',
+        1,
+        0,
+        20,
+        100,
+        'print',
+        { value: 'Hola mundo' },
+        PrintComponent.name,
         'vue'
     ]
 
     const Conditional = [
-        'Home', //module
-        0, //Inputs
-        2, //Outputs
-        20, // Posx
-        100, //Posy
-        'conditional', //class,
-        { condition: '1 == 1' },//data
-        ConditionalComponent.name,//vue component name
+        'Home',
+        0,
+        2,
+        20,
+        100,
+        'conditional',
+        { condition: '1 == 1' },
+        ConditionalComponent.name,
         'vue'
     ]
 
     const Code = [
-        'Home', //module
-        0, //Inputs
-        0, //Outputs
-        20, // Posx
-        100, //Posy
-        'code', //class,
-        {},//data
-        CodeComponent.name,//vue component name
+        'Home',
+        0,
+        0,
+        20,
+        100,
+        'code',
+        {},
+        CodeComponent.name,
         'vue'
     ]
     
     const nodes = {
-        Text,
         Number,
         Add,
         Substraction,
